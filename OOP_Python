@@ -1,0 +1,30 @@
+# chapter_6.py
+
+class Car:
+    runs = False
+
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+    def __str__(self):
+        return f"<<Car object: {self.make} {self.model}>>"
+
+    def __repr__(self):
+        return f"Car('{self.make}', '{self.model}')"
+    def start(self):
+        if self.runs:
+            print(f"{self.make} car is already started")
+        else:
+            print(f"{self.make} car is starting...")
+            self.runs = True
+        pass      
+
+my_car = Car("BMW", "X5")
+print(f"My car runs: {my_car.runs}")
+print(f"This object is a {str(my_car)}")
+print(f"To reproduce it, type: {repr(my_car)}")
+my_car.start()
+my_car.start()
+
+print(isinstance(my_car, Car))
